@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tailwind CSS 80/20 Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .code-display {
+            background: #1a1a1a;
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .example-container {
+            border: 2px dashed #cbd5e0;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            min-height: 120px;
+            background: #f7fafc;
+        }
+        
+        .control-panel {
+            background: #edf2f7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        button {
+            transition: all 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-1px);
+        }
+        
+        .interactive-demo {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+        
+        .demo-header {
+            background: #4a5568;
+            color: white;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .demo-content {
+            padding: 1.5rem;
+        }
+        
+        .utility-pill {
+            display: inline-block;
+            background: #bee3f8;
+            color: #2b6cb0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-family: monospace;
+            margin: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="max-w-6xl mx-auto p-6">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">Interactive Tailwind CSS 80/20 Guide</h1>
+            <p class="text-xl text-gray-600 italic">Master the vital 20% through hands-on practice</p>
+        </header>
+
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">Understanding the 80/20 Principle</h2>
+            <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    <strong>"The 20%"</strong> refers to the vital few utilities that handle 80% of your styling needs. 
+                    In Tailwind CSS, mastering these core utilities will make you highly productive.
+                </p>
+            </div>
+        </div>
+
+        <!-- Layout Utilities -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">1. Layout Utilities</h2>
+            
+            <div class="interactive-demo">
+                <div class="demo-header">Flexbox Layout - Try different combinations!</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Container Classes:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateFlexDemo('flex')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">flex</button>
+                            <button onclick="updateFlexDemo('flex justify-center')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">justify-center</button>
+                            <button onclick="updateFlexDemo('flex justify-between')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">justify-between</button>
+                            <button onclick="updateFlexDemo('flex items-center')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">items-center</button>
+                            <button onclick="updateFlexDemo('flex flex-col')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">flex-col</button>
+                            <button onclick="updateFlexDemo('flex flex-wrap')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">flex-wrap</button>
+                        </div>
+                    </div>
+                    
+                    <div id="flex-example" class="example-container flex">
+                        <div class="bg-red-300 p-4 m-2 rounded">Box 1</div>
+                        <div class="bg-green-300 p-4 m-2 rounded">Box 2</div>
+                        <div class="bg-blue-300 p-4 m-2 rounded">Box 3</div>
+                    </div>
+                    
+                    <div class="code-display" id="flex-code">
+                        &lt;div class="flex"&gt;
+                        &nbsp;&nbsp;&lt;div class="bg-red-300 p-4 m-2 rounded"&gt;Box 1&lt;/div&gt;
+                        &nbsp;&nbsp;&lt;div class="bg-green-300 p-4 m-2 rounded"&gt;Box 2&lt;/div&gt;
+                        &nbsp;&nbsp;&lt;div class="bg-blue-300 p-4 m-2 rounded"&gt;Box 3&lt;/div&gt;
+                        &lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-demo">
+                <div class="demo-header">Grid Layout</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Grid Columns:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateGridDemo('grid-cols-2')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">2 columns</button>
+                            <button onclick="updateGridDemo('grid-cols-3')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">3 columns</button>
+                            <button onclick="updateGridDemo('grid-cols-4')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">4 columns</button>
+                        </div>
+                    </div>
+                    
+                    <div id="grid-example" class="example-container grid grid-cols-3 gap-4">
+                        <div class="bg-yellow-300 p-4 rounded text-center">1</div>
+                        <div class="bg-pink-300 p-4 rounded text-center">2</div>
+                        <div class="bg-indigo-300 p-4 rounded text-center">3</div>
+                        <div class="bg-green-300 p-4 rounded text-center">4</div>
+                        <div class="bg-red-300 p-4 rounded text-center">5</div>
+                        <div class="bg-blue-300 p-4 rounded text-center">6</div>
+                    </div>
+                    
+                    <div class="code-display" id="grid-code">
+                        &lt;div class="grid grid-cols-3 gap-4"&gt;...&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spacing Utilities -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-green-500 pl-4">2. Spacing Utilities</h2>
+            
+            <div class="interactive-demo">
+                <div class="demo-header">Padding & Margins - Watch the spacing change!</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Padding:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateSpacingDemo('p-2')" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">p-2</button>
+                            <button onclick="updateSpacingDemo('p-4')" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">p-4</button>
+                            <button onclick="updateSpacingDemo('p-8')" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">p-8</button>
+                            <button onclick="updateSpacingDemo('px-8 py-2')" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">px-8 py-2</button>
+                        </div>
+                    </div>
+                    
+                    <div class="example-container">
+                        <div id="spacing-example" class="bg-blue-200 p-4 inline-block rounded border-2 border-blue-400">
+                            <div class="bg-white rounded">This box has padding applied</div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-display" id="spacing-code">
+                        &lt;div class="bg-blue-200 p-4 rounded"&gt;Content&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">3. Typography Utilities</h2>
+            
+            <div class="interactive-demo">
+                <div class="demo-header">Text Styling</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block mb-2 font-semibold">Font Size:</label>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <button onclick="updateTextDemo('text-sm')" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">text-sm</button>
+                                    <button onclick="updateTextDemo('text-lg')" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">text-lg</button>
+                                    <button onclick="updateTextDemo('text-2xl')" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">text-2xl</button>
+                                    <button onclick="updateTextDemo('text-4xl')" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">text-4xl</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block mb-2 font-semibold">Font Weight:</label>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <button onclick="updateTextDemo('font-light', 'weight')" class="px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600">font-light</button>
+                                    <button onclick="updateTextDemo('font-normal', 'weight')" class="px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600">font-normal</button>
+                                    <button onclick="updateTextDemo('font-bold', 'weight')" class="px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600">font-bold</button>
+                                    <button onclick="updateTextDemo('font-black', 'weight')" class="px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600">font-black</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-container">
+                        <p id="text-example" class="text-lg font-normal text-gray-800">
+                            This text changes as you click the buttons above!
+                        </p>
+                    </div>
+                    
+                    <div class="code-display" id="text-code">
+                        &lt;p class="text-lg font-normal text-gray-800"&gt;This text changes...&lt;/p&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colors -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-purple-500 pl-4">4. Color Utilities</h2>
+            
+            <div class="interactive-demo">
+                <div class="demo-header">Background & Text Colors</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Try different color combinations:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateColorDemo('bg-red-500 text-white')" class="px-3 py-1 bg-red-500 text-white rounded">Red Background</button>
+                            <button onclick="updateColorDemo('bg-blue-500 text-white')" class="px-3 py-1 bg-blue-500 text-white rounded">Blue Background</button>
+                            <button onclick="updateColorDemo('bg-green-500 text-white')" class="px-3 py-1 bg-green-500 text-white rounded">Green Background</button>
+                            <button onclick="updateColorDemo('bg-purple-500 text-white')" class="px-3 py-1 bg-purple-500 text-white rounded">Purple Background</button>
+                            <button onclick="updateColorDemo('bg-gray-200 text-gray-800')" class="px-3 py-1 bg-gray-200 text-gray-800 rounded">Light Gray</button>
+                            <button onclick="updateColorDemo('bg-yellow-300 text-yellow-900')" class="px-3 py-1 bg-yellow-300 text-yellow-900 rounded">Yellow Theme</button>
+                        </div>
+                    </div>
+                    
+                    <div class="example-container">
+                        <div id="color-example" class="bg-blue-500 text-white p-6 rounded-lg text-center text-xl font-semibold">
+                            I'm a colorful box! 🎨
+                        </div>
+                    </div>
+                    
+                    <div class="code-display" id="color-code">
+                        &lt;div class="bg-blue-500 text-white p-6 rounded-lg"&gt;Content&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Design -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-indigo-500 pl-4">5. Responsive Design</h2>
+            
+            <div class="interactive-demo">
+                <div class="demo-header">Responsive Breakpoints - Resize your window to see changes!</div>
+                <div class="demo-content">
+                    <div class="bg-yellow-100 p-4 rounded mb-4">
+                        <p><strong>💡 Try this:</strong> Resize your browser window to see the responsive behavior!</p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            sm: 640px+ | md: 768px+ | lg: 1024px+ | xl: 1280px+ | 2xl: 1536px+
+                        </p>
+                    </div>
+                    
+                    <div class="example-container">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <div class="bg-purple-300 p-4 rounded text-center">
+                                <span class="block sm:hidden">📱 Mobile</span>
+                                <span class="hidden sm:block md:hidden">📊 Small</span>
+                                <span class="hidden md:block lg:hidden">💻 Medium</span>
+                                <span class="hidden lg:block xl:hidden">🖥️ Large</span>
+                                <span class="hidden xl:block">🖥️ Extra Large</span>
+                            </div>
+                            <div class="bg-pink-300 p-4 rounded text-center">Item 2</div>
+                            <div class="bg-blue-300 p-4 rounded text-center">Item 3</div>
+                            <div class="bg-green-300 p-4 rounded text-center">Item 4</div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-display">
+                        &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"&gt;
+                        &nbsp;&nbsp;&lt;div&gt;Responsive grid items&lt;/div&gt;
+                        &lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive States -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-pink-500 pl-4">6. Interactive States</h2>
+            
+            <div class="interactive-demo">
+                <div class="demo-header">Hover & Focus Effects - Try interacting with these elements!</div>
+                <div class="demo-content">
+                    <div class="example-container space-y-4">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transform hover:scale-105 transition-all duration-200">
+                            Hover me! 🎯
+                        </button>
+                        
+                        <div class="flex space-x-4">
+                            <input 
+                                type="text" 
+                                placeholder="Focus me!" 
+                                class="border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 rounded-lg px-4 py-2 outline-none transition-all"
+                            >
+                            <input 
+                                type="email" 
+                                placeholder="Email here" 
+                                class="border-2 border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 rounded-lg px-4 py-2 outline-none transition-all"
+                            >
+                        </div>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-red-200 hover:bg-red-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
+                                Hover Card 1
+                            </div>
+                            <div class="bg-green-200 hover:bg-green-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
+                                Hover Card 2
+                            </div>
+                            <div class="bg-blue-200 hover:bg-blue-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
+                                Hover Card 3
+                            </div>
+                            <div class="bg-purple-200 hover:bg-purple-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
+                                Hover Card 4
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-display">
+                        &lt;button class="bg-blue-500 hover:bg-blue-700 transform hover:scale-105 transition-all"&gt;
+                        &nbsp;&nbsp;Hover me!
+                        &lt;/button&gt;
+                        <br><br>
+                        &lt;input class="border-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-gray-500 pl-4">Quick Reference: The Essential 20%</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-blue-600">Layout</h3>
+                    <div class="space-y-1">
+                        <span class="utility-pill">flex</span>
+                        <span class="utility-pill">grid</span>
+                        <span class="utility-pill">block</span>
+                        <span class="utility-pill">inline</span>
+                        <span class="utility-pill">hidden</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-green-600">Spacing</h3>
+                    <div class="space-y-1">
+                        <span class="utility-pill">p-4</span>
+                        <span class="utility-pill">m-2</span>
+                        <span class="utility-pill">px-6</span>
+                        <span class="utility-pill">py-3</span>
+                        <span class="utility-pill">gap-4</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-red-600">Typography</h3>
+                    <div class="space-y-1">
+                        <span class="utility-pill">text-lg</span>
+                        <span class="utility-pill">font-bold</span>
+                        <span class="utility-pill">text-center</span>
+                        <span class="utility-pill">text-gray-800</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-purple-600">Colors</h3>
+                    <div class="space-y-1">
+                        <span class="utility-pill">bg-blue-500</span>
+                        <span class="utility-pill">text-white</span>
+                        <span class="utility-pill">border-gray-300</span>
+                        <span class="utility-pill">bg-red-500/50</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-indigo-600">Responsive</h3>
+                    <div class="space-y-1">
+                        <span class="utility-pill">sm:</span>
+                        <span class="utility-pill">md:</span>
+                        <span class="utility-pill">lg:</span>
+                        <span class="utility-pill">xl:</span>
+                        <span class="utility-pill">2xl:</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-3 text-pink-600">States</h3>
+                    <div class="space-y-1">
+                        <span class="utility-pill">hover:</span>
+                        <span class="utility-pill">focus:</span>
+                        <span class="utility-pill">active:</span>
+                        <span class="utility-pill">disabled:</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12 text-gray-600">
+            <p class="text-lg">🎉 Congratulations! You've explored the essential 20% of Tailwind CSS.</p>
+            <p class="mt-2">These utilities will handle 80% of your styling needs. Keep practicing and building!</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentFlexClasses = 'flex';
+        let currentGridCols = 'grid-cols-3';
+        let currentSpacing = 'p-4';
+        let currentTextSize = 'text-lg';
+        let currentTextWeight = 'font-normal';
+        let currentColors = 'bg-blue-500 text-white';
+
+        function updateFlexDemo(classes) {
+            currentFlexClasses = classes;
+            const element = document.getElementById('flex-example');
+            const code = document.getElementById('flex-code');
+            
+            // Clear all classes and apply new ones
+            element.className = '';
+            element.classList.add('example-container');
+            classes.split(' ').forEach(cls => {
+                if (cls.trim()) element.classList.add(cls.trim());
+            });
+            
+            code.innerHTML = `&lt;div class="${classes}"&gt;<br>
+  &nbsp;&nbsp;&lt;div class="bg-red-300 p-4 m-2 rounded"&gt;Box 1&lt;/div&gt;<br>
+  &nbsp;&nbsp;&lt;div class="bg-green-300 p-4 m-2 rounded"&gt;Box 2&lt;/div&gt;<br>
+  &nbsp;&nbsp;&lt;div class="bg-blue-300 p-4 m-2 rounded"&gt;Box 3&lt;/div&gt;<br>
+&lt;/div&gt;`;
+        }
+
+        function updateGridDemo(gridClass) {
+            currentGridCols = gridClass;
+            const element = document.getElementById('grid-example');
+            const code = document.getElementById('grid-code');
+            
+            element.className = '';
+            element.classList.add('example-container', 'grid', gridClass, 'gap-4');
+            
+            code.innerHTML = `&lt;div class="grid ${gridClass} gap-4"&gt;...&lt;/div&gt;`;
+        }
+
+        function updateSpacingDemo(spacingClass) {
+            currentSpacing = spacingClass;
+            const element = document.getElementById('spacing-example');
+            const code = document.getElementById('spacing-code');
+            
+            element.className = '';
+            element.classList.add('bg-blue-200', 'inline-block', 'rounded', 'border-2', 'border-blue-400');
+            spacingClass.split(' ').forEach(cls => {
+                if (cls.trim()) element.classList.add(cls.trim());
+            });
+            
+            code.innerHTML = `&lt;div class="bg-blue-200 ${spacingClass} rounded"&gt;Content&lt;/div&gt;`;
+        }
+
+        function updateTextDemo(newClass, type = 'size') {
+            const element = document.getElementById('text-example');
+            const code = document.getElementById('text-code');
+            
+            if (type === 'size') {
+                currentTextSize = newClass;
+            } else if (type === 'weight') {
+                currentTextWeight = newClass;
+            }
+            
+            element.className = '';
+            element.classList.add(currentTextSize, currentTextWeight, 'text-gray-800');
+            
+            code.innerHTML = `&lt;p class="${currentTextSize} ${currentTextWeight} text-gray-800"&gt;This text changes...&lt;/p&gt;`;
+        }
+
+        function updateColorDemo(colorClasses) {
+            currentColors = colorClasses;
+            const element = document.getElementById('color-example');
+            const code = document.getElementById('color-code');
+            
+            element.className = '';
+            element.classList.add('p-6', 'rounded-lg', 'text-center', 'text-xl', 'font-semibold');
+            colorClasses.split(' ').forEach(cls => {
+                if (cls.trim()) element.classList.add(cls.trim());
+            });
+            
+            code.innerHTML = `&lt;div class="${colorClasses} p-6 rounded-lg"&gt;Content&lt;/div&gt;`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateFlexDemo(currentFlexClasses);
+            updateGridDemo(currentGridCols);
+            updateSpacingDemo(currentSpacing);
+            updateTextDemo(currentTextSize, 'size');
+            updateColorDemo(currentColors);
+        });
+    </script>
+</body>
+</html>
