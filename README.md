@@ -1,5 +1,9 @@
 # Interactive Tailwind CSS 80/20 Mastery Guide
 
+🚀 **[Try the Interactive Guide Live →](https://dorijantomic.github.io/tailwind80-20/)**
+
+> Master the essential 20% of Tailwind CSS that handles 80% of your styling needs through hands-on interactive examples.
+
 ## Why I Created This
 
 Learning Tailwind CSS felt overwhelming at first - there are hundreds of utility classes to remember! I realized I was getting lost in the documentation and needed a more hands-on approach to truly understand how the utilities work together.
@@ -53,6 +57,12 @@ This guide focuses on the **essential 20% of Tailwind utilities** that handle **
 - 📝 **Code Display**: See exact classes being used
 - 🚀 **No Setup Required**: Works immediately in any browser
 
+## 🎮 Try It Live
+
+**[Interactive Guide on GitHub Pages →](https://dorijantomic.github.io/tailwind80-20/)**
+
+No installation required! Just click the link above to start learning Tailwind CSS interactively in your browser.
+
 ## How to Use
 
 1. Open the guide in your browser
@@ -80,5 +90,28 @@ The 80/20 principle suggests that 20% of inputs drive 80% of results. In Tailwin
 By focusing on this vital 20%, you build a strong foundation without getting overwhelmed.
 
 ---
+
+## 🔧 Local Development
+
+Want to run it locally or contribute?
+
+```bash
+# Clone the repository
+git clone https://github.com/dorijantomic/tailwind80-20.git
+
+# Navigate to the directory
+cd tailwind80-20
+
+# Open in your browser
+open index.html
+# or use a local server like Live Server in VS Code
+```
+
+## 🤝 Contributing
+
+Found a bug or have an idea for improvement? 
+- Open an issue
+- Submit a pull request
+- Share your feedback
 
 **Happy learning!** 🎉 This guide gave me the confidence to start building with Tailwind immediately, and I hope it does the same for you.
