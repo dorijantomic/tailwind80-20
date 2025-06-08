@@ -99,62 +99,191 @@
 
         <!-- Layout Utilities -->
         <div class="section">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">1. Layout Utilities</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">1. Layout Patterns & Combinations</h2>
             
             <div class="interactive-demo">
-                <div class="demo-header">Flexbox Layout - Try different combinations!</div>
+                <div class="demo-header">Common Flexbox Patterns - Real-world combinations!</div>
                 <div class="demo-content">
                     <div class="control-panel">
-                        <label class="block mb-2 font-semibold">Container Classes:</label>
+                        <label class="block mb-2 font-semibold">Try these common flex patterns:</label>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <button onclick="updateFlexDemo('flex')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">flex</button>
-                            <button onclick="updateFlexDemo('flex justify-center')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">justify-center</button>
-                            <button onclick="updateFlexDemo('flex justify-between')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">justify-between</button>
-                            <button onclick="updateFlexDemo('flex items-center')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">items-center</button>
-                            <button onclick="updateFlexDemo('flex flex-col')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">flex-col</button>
-                            <button onclick="updateFlexDemo('flex flex-wrap')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">flex-wrap</button>
+                            <button onclick="updateFlexDemo('flex items-center justify-between')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Navbar Layout</button>
+                            <button onclick="updateFlexDemo('flex flex-col gap-4')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Vertical Stack</button>
+                            <button onclick="updateFlexDemo('flex items-center gap-3')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Horizontal Row</button>
+                            <button onclick="updateFlexDemo('flex flex-wrap gap-4')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Responsive Wrap</button>
+                            <button onclick="updateFlexDemo('flex items-center justify-center min-h-32')" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Perfect Center</button>
                         </div>
                     </div>
                     
                     <div id="flex-example" class="example-container flex">
-                        <div class="bg-red-300 p-4 m-2 rounded">Box 1</div>
-                        <div class="bg-green-300 p-4 m-2 rounded">Box 2</div>
-                        <div class="bg-blue-300 p-4 m-2 rounded">Box 3</div>
+                        <div class="bg-red-300 p-4 rounded">Logo</div>
+                        <div class="bg-green-300 p-4 rounded">Navigation</div>
+                        <div class="bg-blue-300 p-4 rounded">User Menu</div>
                     </div>
                     
                     <div class="code-display" id="flex-code">
                         &lt;div class="flex"&gt;
-                        &nbsp;&nbsp;&lt;div class="bg-red-300 p-4 m-2 rounded"&gt;Box 1&lt;/div&gt;
-                        &nbsp;&nbsp;&lt;div class="bg-green-300 p-4 m-2 rounded"&gt;Box 2&lt;/div&gt;
-                        &nbsp;&nbsp;&lt;div class="bg-blue-300 p-4 m-2 rounded"&gt;Box 3&lt;/div&gt;
+                        &nbsp;&nbsp;&lt;div&gt;Logo&lt;/div&gt;
+                        &nbsp;&nbsp;&lt;div&gt;Navigation&lt;/div&gt;
+                        &nbsp;&nbsp;&lt;div&gt;User Menu&lt;/div&gt;
                         &lt;/div&gt;
                     </div>
                 </div>
             </div>
 
             <div class="interactive-demo">
-                <div class="demo-header">Grid Layout</div>
+                <div class="demo-header">Flex Sizing Patterns - flex-1, flex-none, etc.</div>
                 <div class="demo-content">
                     <div class="control-panel">
-                        <label class="block mb-2 font-semibold">Grid Columns:</label>
+                        <label class="block mb-2 font-semibold">Flex sizing combinations:</label>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <button onclick="updateGridDemo('grid-cols-2')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">2 columns</button>
-                            <button onclick="updateGridDemo('grid-cols-3')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">3 columns</button>
-                            <button onclick="updateGridDemo('grid-cols-4')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">4 columns</button>
+                            <button onclick="updateFlexSizing('equal')" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">Equal Width (flex-1)</button>
+                            <button onclick="updateFlexSizing('sidebar')" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">Sidebar Layout</button>
+                            <button onclick="updateFlexSizing('fixed')" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">Fixed + Flexible</button>
                         </div>
                     </div>
                     
-                    <div id="grid-example" class="example-container grid grid-cols-3 gap-4">
-                        <div class="bg-yellow-300 p-4 rounded text-center">1</div>
-                        <div class="bg-pink-300 p-4 rounded text-center">2</div>
-                        <div class="bg-indigo-300 p-4 rounded text-center">3</div>
-                        <div class="bg-green-300 p-4 rounded text-center">4</div>
-                        <div class="bg-red-300 p-4 rounded text-center">5</div>
-                        <div class="bg-blue-300 p-4 rounded text-center">6</div>
+                    <div id="flex-sizing-example" class="example-container flex gap-4">
+                        <div class="bg-purple-300 p-4 rounded flex-1">Main Content (flex-1)</div>
+                        <div class="bg-orange-300 p-4 rounded w-48 flex-none">Sidebar (w-48 flex-none)</div>
                     </div>
                     
-                    <div class="code-display" id="grid-code">
-                        &lt;div class="grid grid-cols-3 gap-4"&gt;...&lt;/div&gt;
+                    <div class="code-display" id="flex-sizing-code">
+                        &lt;div class="flex gap-4"&gt;
+                        &nbsp;&nbsp;&lt;div class="flex-1"&gt;Main Content&lt;/div&gt;
+                        &nbsp;&nbsp;&lt;div class="w-48 flex-none"&gt;Sidebar&lt;/div&gt;
+                        &lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-demo">
+                <div class="demo-header">Grid Patterns - Beyond basic columns</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Common grid layouts:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateAdvancedGrid('responsive')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">Responsive Auto-fit</button>
+                            <button onclick="updateAdvancedGrid('sidebar-grid')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">Sidebar + Grid</button>
+                            <button onclick="updateAdvancedGrid('masonry')" class="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600">Card Masonry</button>
+                        </div>
+                    </div>
+                    
+                    <div id="advanced-grid-example" class="example-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-yellow-300 p-4 rounded text-center">Card 1</div>
+                        <div class="bg-pink-300 p-4 rounded text-center">Card 2</div>
+                        <div class="bg-indigo-300 p-4 rounded text-center">Card 3</div>
+                        <div class="bg-green-300 p-4 rounded text-center">Card 4</div>
+                        <div class="bg-red-300 p-4 rounded text-center">Card 5</div>
+                        <div class="bg-blue-300 p-4 rounded text-center">Card 6</div>
+                    </div>
+                    
+                    <div class="code-display" id="advanced-grid-code">
+                        &lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"&gt;...&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common UI Components -->
+        <div class="section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-emerald-500 pl-4">2. Common UI Component Patterns</h2>
+            
+            <div class="interactive-demo">
+                <div class="demo-header">Button Patterns - Perfect for any project</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Common button styles:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateButtonDemo('primary')" class="px-3 py-1 bg-emerald-500 text-white rounded hover:bg-emerald-600">Primary Button</button>
+                            <button onclick="updateButtonDemo('secondary')" class="px-3 py-1 bg-emerald-500 text-white rounded hover:bg-emerald-600">Secondary Button</button>
+                            <button onclick="updateButtonDemo('icon')" class="px-3 py-1 bg-emerald-500 text-white rounded hover:bg-emerald-600">Icon Button</button>
+                            <button onclick="updateButtonDemo('pill')" class="px-3 py-1 bg-emerald-500 text-white rounded hover:bg-emerald-600">Pill Button</button>
+                        </div>
+                    </div>
+                    
+                    <div class="example-container flex flex-wrap gap-4">
+                        <button id="button-example" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2">
+                            <span>Click me!</span>
+                        </button>
+                    </div>
+                    
+                    <div class="code-display" id="button-code">
+                        &lt;button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2"&gt;
+                        &nbsp;&nbsp;Click me!
+                        &lt;/button&gt;
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-demo">
+                <div class="demo-header">Card Components - Foundation of modern UIs</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Card variations:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateCardDemo('basic')" class="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600">Basic Card</button>
+                            <button onclick="updateCardDemo('profile')" class="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600">Profile Card</button>
+                            <button onclick="updateCardDemo('product')" class="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600">Product Card</button>
+                            <button onclick="updateCardDemo('stats')" class="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600">Stats Card</button>
+                        </div>
+                    </div>
+                    
+                    <div class="example-container">
+                        <div id="card-example" class="bg-white rounded-xl shadow-lg p-6 max-w-sm">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">JD</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">John Doe</h3>
+                                    <p class="text-gray-500 text-sm">Frontend Developer</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">Building amazing user experiences with modern web technologies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="code-display" id="card-code">
+                        &lt;div class="bg-white rounded-xl shadow-lg p-6 max-w-sm"&gt;
+                        &nbsp;&nbsp;&lt;div class="flex items-center gap-4 mb-4"&gt;...&lt;/div&gt;
+                        &nbsp;&nbsp;&lt;p class="text-gray-600"&gt;Content...&lt;/p&gt;
+                        &lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-demo">
+                <div class="demo-header">Form Patterns - Input styling and layout</div>
+                <div class="demo-content">
+                    <div class="control-panel">
+                        <label class="block mb-2 font-semibold">Form layouts:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <button onclick="updateFormDemo('stacked')" class="px-3 py-1 bg-rose-500 text-white rounded hover:bg-rose-600">Stacked Form</button>
+                            <button onclick="updateFormDemo('inline')" class="px-3 py-1 bg-rose-500 text-white rounded hover:bg-rose-600">Inline Form</button>
+                            <button onclick="updateFormDemo('grid')" class="px-3 py-1 bg-rose-500 text-white rounded hover:bg-rose-600">Grid Form</button>
+                        </div>
+                    </div>
+                    
+                    <div class="example-container">
+                        <form id="form-example" class="space-y-4 max-w-md">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                                <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••">
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
+                                Sign In
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="code-display" id="form-code">
+                        &lt;form class="space-y-4"&gt;
+                        &nbsp;&nbsp;&lt;input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"&gt;
+                        &nbsp;&nbsp;&lt;button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg"&gt;Submit&lt;/button&gt;
+                        &lt;/form&gt;
                     </div>
                 </div>
             </div>
@@ -391,73 +520,105 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-blue-600">Layout</h3>
+                    <h3 class="font-bold text-lg mb-3 text-blue-600">Layout Patterns</h3>
                     <div class="space-y-1">
-                        <span class="utility-pill">flex</span>
-                        <span class="utility-pill">grid</span>
-                        <span class="utility-pill">block</span>
-                        <span class="utility-pill">inline</span>
-                        <span class="utility-pill">hidden</span>
+                        <span class="utility-pill">flex items-center gap-3</span>
+                        <span class="utility-pill">flex justify-between</span>
+                        <span class="utility-pill">flex flex-col gap-4</span>
+                        <span class="utility-pill">grid grid-cols-3 gap-4</span>
+                        <span class="utility-pill">flex-1</span>
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-green-600">Spacing</h3>
+                    <h3 class="font-bold text-lg mb-3 text-green-600">Spacing & Sizing</h3>
                     <div class="space-y-1">
-                        <span class="utility-pill">p-4</span>
-                        <span class="utility-pill">m-2</span>
-                        <span class="utility-pill">px-6</span>
-                        <span class="utility-pill">py-3</span>
-                        <span class="utility-pill">gap-4</span>
+                        <span class="utility-pill">p-6</span>
+                        <span class="utility-pill">px-4 py-2</span>
+                        <span class="utility-pill">space-y-4</span>
+                        <span class="utility-pill">w-full</span>
+                        <span class="utility-pill">max-w-md</span>
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-red-600">Typography</h3>
+                    <h3 class="font-bold text-lg mb-3 text-red-600">Button Patterns</h3>
                     <div class="space-y-1">
-                        <span class="utility-pill">text-lg</span>
-                        <span class="utility-pill">font-bold</span>
-                        <span class="utility-pill">text-center</span>
-                        <span class="utility-pill">text-gray-800</span>
+                        <span class="utility-pill">bg-blue-600 hover:bg-blue-700</span>
+                        <span class="utility-pill">py-3 px-6</span>
+                        <span class="utility-pill">rounded-lg</span>
+                        <span class="utility-pill">flex items-center gap-2</span>
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-purple-600">Colors</h3>
+                    <h3 class="font-bold text-lg mb-3 text-purple-600">Card Patterns</h3>
                     <div class="space-y-1">
-                        <span class="utility-pill">bg-blue-500</span>
-                        <span class="utility-pill">text-white</span>
-                        <span class="utility-pill">border-gray-300</span>
-                        <span class="utility-pill">bg-red-500/50</span>
+                        <span class="utility-pill">bg-white rounded-xl shadow-lg</span>
+                        <span class="utility-pill">p-6</span>
+                        <span class="utility-pill">overflow-hidden</span>
+                        <span class="utility-pill">max-w-sm</span>
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-600">Responsive</h3>
+                    <h3 class="font-bold text-lg mb-3 text-indigo-600">Form Patterns</h3>
                     <div class="space-y-1">
-                        <span class="utility-pill">sm:</span>
-                        <span class="utility-pill">md:</span>
-                        <span class="utility-pill">lg:</span>
-                        <span class="utility-pill">xl:</span>
-                        <span class="utility-pill">2xl:</span>
+                        <span class="utility-pill">w-full px-3 py-2</span>
+                        <span class="utility-pill">border rounded-lg</span>
+                        <span class="utility-pill">focus:ring-2 focus:ring-blue-500</span>
+                        <span class="utility-pill">space-y-4</span>
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <h3 class="font-bold text-lg mb-3 text-pink-600">States</h3>
+                    <h3 class="font-bold text-lg mb-3 text-pink-600">Interactive States</h3>
                     <div class="space-y-1">
-                        <span class="utility-pill">hover:</span>
-                        <span class="utility-pill">focus:</span>
-                        <span class="utility-pill">active:</span>
-                        <span class="utility-pill">disabled:</span>
+                        <span class="utility-pill">hover:bg-blue-700</span>
+                        <span class="utility-pill">focus:outline-none</span>
+                        <span class="utility-pill">transition-colors duration-200</span>
+                        <span class="utility-pill">transform hover:scale-105</span>
                     </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">🚧 Advanced Patterns - Under Construction</h3>
+                <p class="text-gray-600 mb-4">Additional advanced Tailwind CSS patterns and components will be added in the future when needed:</p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-4 shadow-sm opacity-70">
+                        <h4 class="font-semibold text-blue-600 mb-2">📱 Advanced Layouts</h4>
+                        <p class="text-sm text-gray-600">Complex grids, CSS Grid areas, sticky positioning, advanced flexbox patterns</p>
+                        <div class="text-xs text-orange-600 mt-2 font-medium">Coming Soon</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm opacity-70">
+                        <h4 class="font-semibold text-green-600 mb-2">🎨 Animation & Effects</h4>
+                        <p class="text-sm text-gray-600">Transitions, transforms, keyframe animations, advanced hover effects</p>
+                        <div class="text-xs text-orange-600 mt-2 font-medium">Coming Soon</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm opacity-70">
+                        <h4 class="font-semibold text-purple-600 mb-2">🧩 Component Library</h4>
+                        <p class="text-sm text-gray-600">Modals, dropdowns, tabs, accordions, complex form components</p>
+                        <div class="text-xs text-orange-600 mt-2 font-medium">Coming Soon</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm opacity-70">
+                        <h4 class="font-semibold text-orange-600 mb-2">📐 Layout Recipes</h4>
+                        <p class="text-sm text-gray-600">Dashboard layouts, landing pages, blog layouts, e-commerce patterns</p>
+                        <div class="text-xs text-orange-600 mt-2 font-medium">Coming Soon</div>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-500 italic">
+                    💡 These sections will be developed and added when specific project requirements arise.
                 </div>
             </div>
         </div>
 
         <footer class="text-center mt-12 text-gray-600">
-            <p class="text-lg">🎉 Congratulations! You've explored the essential 20% of Tailwind CSS.</p>
-            <p class="mt-2">These utilities will handle 80% of your styling needs. Keep practicing and building!</p>
+            <p class="text-lg">🎉 Congratulations! You've mastered the essential 20% of Tailwind CSS.</p>
+            <p class="mt-2">These patterns and combinations will handle 80% of your real-world projects. Ready to build something amazing!</p>
+            <div class="mt-4 text-sm">
+                <p class="text-gray-500">💡 <strong>Pro tip:</strong> Practice these patterns by building a personal project - that's where the magic happens!</p>
+            </div>
         </footer>
     </div>
 
@@ -552,12 +713,269 @@
             }
         }
 
+        function updateFlexSizing(pattern) {
+            const element = document.getElementById('flex-sizing-example');
+            const code = document.getElementById('flex-sizing-code');
+            
+            element.className = 'example-container flex gap-4';
+            
+            if (pattern === 'equal') {
+                element.innerHTML = `
+                    <div class="bg-purple-300 p-4 rounded flex-1">Item 1 (flex-1)</div>
+                    <div class="bg-orange-300 p-4 rounded flex-1">Item 2 (flex-1)</div>
+                    <div class="bg-cyan-300 p-4 rounded flex-1">Item 3 (flex-1)</div>
+                `;
+                code.innerHTML = `&lt;div class="flex gap-4"&gt;
+  &nbsp;&nbsp;&lt;div class="flex-1"&gt;Item 1&lt;/div&gt;
+  &nbsp;&nbsp;&lt;div class="flex-1"&gt;Item 2&lt;/div&gt;
+  &nbsp;&nbsp;&lt;div class="flex-1"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;`;
+            } else if (pattern === 'sidebar') {
+                element.innerHTML = `
+                    <div class="bg-orange-300 p-4 rounded w-64 flex-none">Sidebar (w-64 flex-none)</div>
+                    <div class="bg-purple-300 p-4 rounded flex-1">Main Content (flex-1)</div>
+                `;
+                code.innerHTML = `&lt;div class="flex gap-4"&gt;
+  &nbsp;&nbsp;&lt;div class="w-64 flex-none"&gt;Sidebar&lt;/div&gt;
+  &nbsp;&nbsp;&lt;div class="flex-1"&gt;Main Content&lt;/div&gt;
+&lt;/div&gt;`;
+            } else if (pattern === 'fixed') {
+                element.innerHTML = `
+                    <div class="bg-cyan-300 p-4 rounded w-20 flex-none">Icon</div>
+                    <div class="bg-purple-300 p-4 rounded flex-1">Content grows</div>
+                    <div class="bg-orange-300 p-4 rounded w-32 flex-none">Button</div>
+                `;
+                code.innerHTML = `&lt;div class="flex gap-4"&gt;
+  &nbsp;&nbsp;&lt;div class="w-20 flex-none"&gt;Icon&lt;/div&gt;
+  &nbsp;&nbsp;&lt;div class="flex-1"&gt;Content&lt;/div&gt;
+  &nbsp;&nbsp;&lt;div class="w-32 flex-none"&gt;Button&lt;/div&gt;
+&lt;/div&gt;`;
+            }
+        }
+
+        function updateAdvancedGrid(pattern) {
+            const element = document.getElementById('advanced-grid-example');
+            const code = document.getElementById('advanced-grid-code');
+            
+            if (pattern === 'responsive') {
+                element.className = 'example-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4';
+                code.innerHTML = `&lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"&gt;...&lt;/div&gt;`;
+            } else if (pattern === 'sidebar-grid') {
+                element.className = 'example-container grid grid-cols-1 lg:grid-cols-4 gap-6';
+                element.innerHTML = `
+                    <div class="bg-gray-300 p-4 rounded text-center lg:col-span-1">Sidebar</div>
+                    <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-yellow-300 p-4 rounded text-center">Card 1</div>
+                        <div class="bg-pink-300 p-4 rounded text-center">Card 2</div>
+                        <div class="bg-indigo-300 p-4 rounded text-center">Card 3</div>
+                        <div class="bg-green-300 p-4 rounded text-center">Card 4</div>
+                    </div>
+                `;
+                code.innerHTML = `&lt;div class="grid grid-cols-1 lg:grid-cols-4 gap-6"&gt;
+  &nbsp;&nbsp;&lt;div class="lg:col-span-1"&gt;Sidebar&lt;/div&gt;
+  &nbsp;&nbsp;&lt;div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;`;
+            } else if (pattern === 'masonry') {
+                element.className = 'example-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4';
+                element.innerHTML = `
+                    <div class="bg-yellow-300 p-4 rounded text-center h-24">Short Card</div>
+                    <div class="bg-pink-300 p-4 rounded text-center h-40">Tall Card</div>
+                    <div class="bg-indigo-300 p-4 rounded text-center h-32">Medium Card</div>
+                    <div class="bg-green-300 p-4 rounded text-center h-20">Tiny Card</div>
+                    <div class="bg-red-300 p-4 rounded text-center h-36">Large Card</div>
+                    <div class="bg-blue-300 p-4 rounded text-center h-28">Regular Card</div>
+                `;
+                code.innerHTML = `&lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"&gt;
+  &nbsp;&nbsp;&lt;div class="h-24"&gt;Short Card&lt;/div&gt;
+  &nbsp;&nbsp;&lt;div class="h-40"&gt;Tall Card&lt;/div&gt;
+  &nbsp;&nbsp;...varying heights
+&lt;/div&gt;`;
+            }
+        }
+
+        function updateButtonDemo(style) {
+            const element = document.getElementById('button-example');
+            const code = document.getElementById('button-code');
+            
+            if (style === 'primary') {
+                element.className = 'bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2';
+                element.innerHTML = '<span>Primary Button</span>';
+                code.innerHTML = `&lt;button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg"&gt;
+  Primary Button
+&lt;/button&gt;`;
+            } else if (style === 'secondary') {
+                element.className = 'bg-white hover:bg-gray-50 text-gray-700 font-semibold py-3 px-6 rounded-lg border-2 border-gray-300 hover:border-gray-400 transition-all duration-200 flex items-center gap-2';
+                element.innerHTML = '<span>Secondary Button</span>';
+                code.innerHTML = `&lt;button class="bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-300 hover:border-gray-400 py-3 px-6 rounded-lg"&gt;
+  Secondary Button
+&lt;/button&gt;`;
+            } else if (style === 'icon') {
+                element.className = 'bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center gap-2';
+                element.innerHTML = '<span>✓</span><span>Save Changes</span>';
+                code.innerHTML = `&lt;button class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg flex items-center gap-2"&gt;
+  &lt;span&gt;✓&lt;/span&gt;
+  &lt;span&gt;Save Changes&lt;/span&gt;
+&lt;/button&gt;`;
+            } else if (style === 'pill') {
+                element.className = 'bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 flex items-center gap-2';
+                element.innerHTML = '<span>Pill Button</span>';
+                code.innerHTML = `&lt;button class="bg-purple-600 hover:bg-purple-700 text-white py-3 px-8 rounded-full"&gt;
+  Pill Button
+&lt;/button&gt;`;
+            }
+        }
+
+        function updateCardDemo(style) {
+            const element = document.getElementById('card-example');
+            const code = document.getElementById('card-code');
+            
+            if (style === 'basic') {
+                element.className = 'bg-white rounded-xl shadow-lg p-6 max-w-sm';
+                element.innerHTML = `
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Card Title</h3>
+                    <p class="text-gray-600">This is a basic card with some content and a clean design.</p>
+                `;
+                code.innerHTML = `&lt;div class="bg-white rounded-xl shadow-lg p-6 max-w-sm"&gt;
+  &lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="text-gray-600"&gt;Card content...&lt;/p&gt;
+&lt;/div&gt;`;
+            } else if (style === 'profile') {
+                element.className = 'bg-white rounded-xl shadow-lg p-6 max-w-sm';
+                element.innerHTML = `
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">JD</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">John Doe</h3>
+                            <p class="text-gray-500 text-sm">Frontend Developer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Building amazing user experiences with modern web technologies.</p>
+                `;
+                code.innerHTML = `&lt;div class="bg-white rounded-xl shadow-lg p-6"&gt;
+  &lt;div class="flex items-center gap-4 mb-4"&gt;
+    &lt;div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"&gt;JD&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`;
+            } else if (style === 'product') {
+                element.className = 'bg-white rounded-xl shadow-lg overflow-hidden max-w-sm';
+                element.innerHTML = `
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-400"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Amazing Product</h3>
+                        <p class="text-gray-600 mb-4">This product will change your life forever.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-green-600">$99</span>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">Buy Now</button>
+                        </div>
+                    </div>
+                `;
+                code.innerHTML = `&lt;div class="bg-white rounded-xl shadow-lg overflow-hidden"&gt;
+  &lt;div class="h-48 bg-gradient-to-br from-purple-400 to-pink-400"&gt;&lt;/div&gt;
+  &lt;div class="p-6"&gt;
+    &lt;h3&gt;Product Name&lt;/h3&gt;
+    &lt;div class="flex items-center justify-between"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`;
+            } else if (style === 'stats') {
+                element.className = 'bg-white rounded-xl shadow-lg p-6 max-w-sm';
+                element.innerHTML = `
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">2,847</div>
+                        <div class="text-gray-500 text-sm uppercase tracking-wide">Total Users</div>
+                        <div class="mt-4 flex items-center justify-center text-green-600">
+                            <span class="text-sm">↗ +12% from last month</span>
+                        </div>
+                    </div>
+                `;
+                code.innerHTML = `&lt;div class="bg-white rounded-xl shadow-lg p-6 text-center"&gt;
+  &lt;div class="text-3xl font-bold text-blue-600 mb-2"&gt;2,847&lt;/div&gt;
+  &lt;div class="text-gray-500 text-sm uppercase"&gt;Total Users&lt;/div&gt;
+  &lt;div class="text-green-600"&gt;↗ +12%&lt;/div&gt;
+&lt;/div&gt;`;
+            }
+        }
+
+        function updateFormDemo(style) {
+            const element = document.getElementById('form-example');
+            const code = document.getElementById('form-code');
+            
+            if (style === 'stacked') {
+                element.className = 'space-y-4 max-w-md';
+                element.innerHTML = `
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
+                        Sign In
+                    </button>
+                `;
+                code.innerHTML = `&lt;form class="space-y-4"&gt;
+  &lt;div&gt;
+    &lt;label class="block text-sm font-medium text-gray-700 mb-1"&gt;Email&lt;/label&gt;
+    &lt;input class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;`;
+            } else if (style === 'inline') {
+                element.className = 'flex gap-2 max-w-md';
+                element.innerHTML = `
+                    <input type="email" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200 whitespace-nowrap">
+                        Subscribe
+                    </button>
+                `;
+                code.innerHTML = `&lt;form class="flex gap-2"&gt;
+  &lt;input class="flex-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"&gt;
+  &lt;button class="bg-blue-600 text-white px-6 py-2 rounded-lg"&gt;Subscribe&lt;/button&gt;
+&lt;/form&gt;`;
+            } else if (style === 'grid') {
+                element.className = 'grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg';
+                element.innerHTML = `
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Doe">
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com">
+                    </div>
+                    <div class="sm:col-span-2">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
+                            Create Account
+                        </button>
+                    </div>
+                `;
+                code.innerHTML = `&lt;form class="grid grid-cols-1 sm:grid-cols-2 gap-4"&gt;
+  &lt;input class="w-full px-3 py-2 border rounded-lg"&gt;
+  &lt;input class="w-full px-3 py-2 border rounded-lg"&gt;
+  &lt;div class="sm:col-span-2"&gt;
+    &lt;input class="w-full px-3 py-2 border rounded-lg"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;`;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             updateFlexDemo(currentFlexClasses);
             updateGridDemo(currentGridCols);
             updateSpacingDemo(currentSpacing);
             updateTextDemo(currentTextSize, 'size');
             updateColorDemo(currentColors);
+            
+            updateFlexSizing('sidebar');
+            updateAdvancedGrid('responsive');
+            updateButtonDemo('primary');
+            updateCardDemo('profile');
+            updateFormDemo('stacked');
         });
     </script>
 </body>
