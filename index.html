@@ -329,27 +329,57 @@
                         </div>
                         
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="bg-red-200 hover:bg-red-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
-                                Hover Card 1
+                            <div class="bg-red-100 hover:bg-red-500 hover:text-white hover:shadow-lg hover:-translate-y-2 p-4 rounded-lg cursor-pointer transition-all duration-300 text-center border-2 border-red-200 hover:border-red-600">
+                                <div class="font-semibold">🔴 Hover Me!</div>
+                                <div class="text-sm mt-2 opacity-75">Red Transform</div>
                             </div>
-                            <div class="bg-green-200 hover:bg-green-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
-                                Hover Card 2
+                            <div class="bg-green-100 hover:bg-green-500 hover:text-white hover:shadow-lg hover:-translate-y-2 p-4 rounded-lg cursor-pointer transition-all duration-300 text-center border-2 border-green-200 hover:border-green-600">
+                                <div class="font-semibold">🟢 Hover Me!</div>
+                                <div class="text-sm mt-2 opacity-75">Green Transform</div>
                             </div>
-                            <div class="bg-blue-200 hover:bg-blue-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
-                                Hover Card 3
+                            <div class="bg-blue-100 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:-translate-y-2 p-4 rounded-lg cursor-pointer transition-all duration-300 text-center border-2 border-blue-200 hover:border-blue-600">
+                                <div class="font-semibold">🔵 Hover Me!</div>
+                                <div class="text-sm mt-2 opacity-75">Blue Transform</div>
                             </div>
-                            <div class="bg-purple-200 hover:bg-purple-400 p-4 rounded cursor-pointer transition-colors duration-300 text-center">
-                                Hover Card 4
+                            <div class="bg-purple-100 hover:bg-purple-500 hover:text-white hover:shadow-lg hover:-translate-y-2 p-4 rounded-lg cursor-pointer transition-all duration-300 text-center border-2 border-purple-200 hover:border-purple-600">
+                                <div class="font-semibold">🟣 Hover Me!</div>
+                                <div class="text-sm mt-2 opacity-75">Purple Transform</div>
                             </div>
+                        </div>
+                        
+                        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <button 
+                                onclick="toggleActiveCard(this)" 
+                                class="bg-white hover:bg-yellow-400 hover:text-black border-2 border-yellow-400 text-yellow-600 font-bold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95"
+                            >
+                                Click to Toggle Active State! ⚡
+                            </button>
+                            <button 
+                                class="bg-gray-200 hover:bg-gray-800 hover:text-white text-gray-600 font-bold py-3 px-4 rounded-lg transition-all duration-300 transform hover:rotate-3 hover:scale-105"
+                            >
+                                Rotate on Hover 🔄
+                            </button>
+                            <button 
+                                class="bg-gradient-to-r from-pink-400 to-purple-500 hover:from-purple-500 hover:to-pink-400 text-white font-bold py-3 px-4 rounded-lg transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
+                            >
+                                Gradient Flip 🌈
+                            </button>
                         </div>
                     </div>
                     
                     <div class="code-display">
-                        &lt;button class="bg-blue-500 hover:bg-blue-700 transform hover:scale-105 transition-all"&gt;
-                        &nbsp;&nbsp;Hover me!
+                        &lt;!-- Hover Effects --&gt;<br>
+                        &lt;div class="hover:bg-blue-500 hover:text-white hover:-translate-y-2 transition-all"&gt;<br>
+                        &nbsp;&nbsp;Hover transforms!<br>
+                        &lt;/div&gt;<br><br>
+                        
+                        &lt;!-- Focus Effects --&gt;<br>
+                        &lt;input class="focus:border-blue-500 focus:ring-2 focus:ring-blue-200"&gt;<br><br>
+                        
+                        &lt;!-- Active & Scale Effects --&gt;<br>
+                        &lt;button class="hover:scale-105 active:scale-95 transform transition-all"&gt;<br>
+                        &nbsp;&nbsp;Interactive button<br>
                         &lt;/button&gt;
-                        <br><br>
-                        &lt;input class="border-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"&gt;
                     </div>
                 </div>
             </div>
@@ -432,19 +462,18 @@
     </div>
 
     <script>
-        let currentFlexClasses = 'flex';
-        let currentGridCols = 'grid-cols-3';
-        let currentSpacing = 'p-4';
-        let currentTextSize = 'text-lg';
-        let currentTextWeight = 'font-normal';
-        let currentColors = 'bg-blue-500 text-white';
+        var currentFlexClasses = 'flex';
+        var currentGridCols = 'grid-cols-3';
+        var currentSpacing = 'p-4';
+        var currentTextSize = 'text-lg';
+        var currentTextWeight = 'font-normal';
+        var currentColors = 'bg-blue-500 text-white';
 
         function updateFlexDemo(classes) {
             currentFlexClasses = classes;
             const element = document.getElementById('flex-example');
             const code = document.getElementById('flex-code');
             
-            // Clear all classes and apply new ones
             element.className = '';
             element.classList.add('example-container');
             classes.split(' ').forEach(cls => {
@@ -511,6 +540,16 @@
             });
             
             code.innerHTML = `&lt;div class="${colorClasses} p-6 rounded-lg"&gt;Content&lt;/div&gt;`;
+        }
+
+        function toggleActiveCard(button) {
+            if (button.classList.contains('bg-yellow-400')) {
+                button.className = 'bg-white hover:bg-yellow-400 hover:text-black border-2 border-yellow-400 text-yellow-600 font-bold py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95';
+                button.innerHTML = 'Click to Toggle Active State! ⚡';
+            } else {
+                button.className = 'bg-yellow-400 text-black border-2 border-yellow-600 font-bold py-3 px-4 rounded-lg transition-all duration-200 transform scale-105 shadow-lg';
+                button.innerHTML = 'Active State Applied! ✨ (Click again)';
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
